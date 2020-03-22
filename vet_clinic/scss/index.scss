@@ -1,0 +1,340 @@
+@import 'colors.scss';
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+*,html,body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-size: 1em;
+ font-family: 'Roboto', sans-serif;
+}
+
+header{
+  background: $mainblue;
+  position: fixed;
+  width: 100%;
+}
+
+.toggle, [id=drop]{
+  display: none;
+}
+
+.logo{
+  margin: 0;
+  padding: 0;
+}
+.logo a{
+  color: #fff;
+  font-size: 25px;
+  font-weight: 600;
+  float: left;
+}
+.logo a:hover{
+  opacity: 0.7;
+  text-decoration: none;
+  color: $logocolor;
+}
+
+nav{
+  float: right;
+  line-height: 34px;
+}
+nav ul{
+  margin: 0;
+  padding: 0;
+}
+nav ul li{
+  display: inline-block;
+  margin: 0 5px 0 5px;
+}
+nav ul li a{
+  color: #fff;
+  font-size: 18px;
+  text-transform: uppercase;
+  padding: 9px;
+}
+nav ul li a:hover{
+  color: white;
+  text-decoration:none;
+   opacity: 0.7;
+  background: darken($mainblue,15%);
+}
+
+.search {
+  width: 100%;
+  position: absolute;
+  //margin-top: -100px;
+  //margin-left: -450px;
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid $mainblue;
+  border-right: none;
+  padding: 15px;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  //color: red;
+}
+
+.searchTerm:focus{
+  color: $mainblue;
+}
+
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid $mainblue;
+  background: $mainblue;
+  text-align: center;
+  color: $logocolor;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 20%;
+  position: absolute;
+  top: 35%;
+  left: 23%;
+  transform: translate(-50%, -50%);
+}
+
+.dog{
+  width: 100%;
+  position: absolute;
+  margin-top: 37px;
+  z-index: -1;
+  //border: 1px solid white;
+
+}
+
+.maintext{
+  position: absolute;
+  z-index: 1;
+  margin-left: 15%;
+  margin-top: 12%;
+  text-align: center;
+  color: $maintext;
+  //margin-top: 50px;
+}
+
+.welcome , .recent{
+ font-family: 'Oswald', sans-serif;
+ font-weight: bold;
+}
+
+.recent{
+  font-size:30px;
+}
+
+.vet{
+  width: 180px;
+  height: 120px;
+  border-radius: 2px;
+}
+
+.cards{
+  position: absolute;
+  margin-top: 30%;
+  margin-left: 10%;
+  width: 50%;
+}
+
+.horizontal-card-bg-img {
+  width:180px;
+  //background:#F5F9FB;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius:6px;
+}
+
+.horizontal-card-btn-container {
+  width:140px;
+}
+
+.myButton {
+	box-shadow: 0px 10px 14px -7px grey;
+	background:linear-gradient(to bottom, $mainblue 5%, $blue 100%);
+	background-color:$mainblue;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+	color:white;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:13px 32px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px grey;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, $blue 5%, $btnhover 100%);
+	background-color:$blue;
+  text-decoration: none;
+  color: white;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+.grow { transition: all .2s ease-in-out;}
+
+.grow:hover {
+  transform: scale(1.1);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+@media (max-width:700px)
+{
+
+  .logo{
+			display: block;
+			width: 100%;
+			text-align: center;
+			float: none;
+			padding: 20px 0 10px;
+
+		}
+  .logo a{
+    color: white;
+
+  }
+  nav{
+    width: 100%;
+    float: none;
+    display: block;
+    position: relative;
+  }
+  nav ul li{
+    width: 100%;
+    border-bottom: 1px solid darken($mainblue,15%);
+  }
+  .toggle +a, ul{
+    display:none;
+  }
+  .toggle{
+			display: block;
+			background-color: $mainblue;
+			padding: 20px 20px;
+			color: #fff;
+			font-size: 17px;
+			cursor:pointer;
+		}
+
+		.toggle:hover{
+			background-color: $mainblue;
+			cursor: pointer;
+		}
+  [id^=drop]:checked + ul{
+    display: block;
+  }
+  .toggle:before{
+			    position: absolute;
+	    top: 16px;
+	    right: 17px;
+	    display: block;
+	    height: 2px;
+	    width: 20px;
+	    background: $logocolor;
+	    content: '';
+
+		}
+
+		.toggle:after{
+			    position: absolute;
+	    top: 22px;
+	    right: 17px;
+	    display: block;
+	    height: 8px;
+	    width: 20px;
+	    border-top: 2px solid $logocolor;
+	    border-bottom: 2px solid $logocolor;
+	    content: '';
+		}
+
+		.toggle-open:before{    top: 23px;
+	    background: #ffffff;
+      position: absolute;
+	    width: 15px;
+	    -webkit-transform: rotate(-45deg);
+	    -moz-transform: rotate(-45deg);
+	    -ms-transform: rotate(-45deg);
+	    -o-transform: rotate(-45deg);
+	    transform: rotate(-45deg);}
+
+		.toggle-open:after{top: 23px;
+	    border: 0;
+	    height: 2px;
+	    width: 15px;
+	    background: #ffffff;
+      position: absolute;
+	    -webkit-transform: rotate(45deg);
+	    -moz-transform: rotate(45deg);
+	    -ms-transform: rotate(45deg);
+	    -o-transform: rotate(45deg);
+	    transform: rotate(45deg);}
+
+      .dog{
+        width: 100%;
+        position: absolute;
+        margin-top: 20%;//105px;
+        z-index: -2;
+        //border: 1px solid white;
+
+      }
+
+      .maintext{
+        position: absolute;
+        z-index: -1;
+        margin-left:10%;
+        margin-top: 22%;
+        //margin-top: 50px;
+      }
+
+      .welcome{
+        font-size: 30px;
+      }
+
+      .lea{
+        font-size: 15px;
+      }
+
+      .wrap{
+        width: 30%;
+        position: absolute;
+        top: 23%;
+        left: 25%;
+        //transform: translate(-50%, -50%);
+        z-index: -1;
+      }
+      .cards{
+        margin-top: 55%;
+        margin-left: 10%;
+        width: 75%;
+        z-index: -1;
+      }
+      .vet{
+        width: 90px;
+        height: 120px;
+        border-radius: 2px;
+      }
+      .horizontal-card-bg-img {
+        width:90px;
+        height: 60px;
+      }
+
+
+      .myButton {
+        	padding:7px 15px;
+      }
+      .card-body{
+        font-size: 15px !important;
+      }
+	}
