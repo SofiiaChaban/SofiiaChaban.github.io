@@ -100,10 +100,14 @@ nav ul li a:hover{
 /*Resize the wrap to see the search bar change!*/
 .wrap{
   width: 20%;
+  float: none;
   position: absolute;
   top: 35%;
+  //bottom:40%;
   left: 23%;
   transform: translate(-50%, -50%);
+  z-index: -1;
+  display: inline-block;
 }
 
 .dog{
@@ -117,7 +121,7 @@ nav ul li a:hover{
 
 .maintext{
   position: absolute;
-  z-index: 1;
+  z-index: -1;
   margin-left: 15%;
   margin-top: 12%;
   text-align: center;
@@ -191,9 +195,220 @@ nav ul li a:hover{
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
-@media (max-width:700px)
-{
 
+/* Large desktop */
+//@media (min-width: 1200px) { ... }
+
+/* Portrait tablet to landscape and desktop */
+//@media (min-width: 768px) and (max-width: 979px) { ... }
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) and (min-width: 481px) {
+  .dog{
+    width: 100%;
+    position: absolute;
+    margin-top: 15%;//105px;
+    z-index: -2;
+    //border: 1px solid white;
+
+  }
+  .maintext{
+    position: absolute;
+    z-index: -1;
+    margin-left:10%;
+    margin-top: 27%;
+    //margin-top: 50px;
+  }
+
+  .welcome{
+    font-size: 30px;
+  }
+  .wrap{
+    width: 30%;
+    position: absolute;
+    top: 33%;
+    left: 25%;
+    float: none;
+    //transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+
+  .logo{
+      display: block;
+      width: 100%;
+      text-align: center;
+      float: none;
+      padding: 20px 0 10px;
+
+    }
+  .logo a{
+    color: white;
+
+  }
+  nav{
+    width: 100%;
+    float: none;
+    display: block;
+    position: relative;
+  }
+  nav ul li{
+    width: 100%;
+    border-bottom: 1px solid darken($mainblue,15%);
+  }
+  .toggle +a, ul{
+    display:none;
+  }
+  .toggle{
+      display: block;
+      background-color: $mainblue;
+      padding: 20px 20px;
+      color: #fff;
+      font-size: 17px;
+      cursor:pointer;
+    }
+
+    .toggle:hover{
+      background-color: $mainblue;
+      cursor: pointer;
+    }
+  [id^=drop]:checked + ul{
+    display: block;
+  }
+  .toggle:before{
+          position: absolute;
+      top: 16px;
+      right: 17px;
+      display: block;
+      height: 2px;
+      width: 20px;
+      background: $logocolor;
+      content: '';
+
+    }
+
+    .toggle:after{
+          position: absolute;
+      top: 22px;
+      right: 17px;
+      display: block;
+      height: 8px;
+      width: 20px;
+      border-top: 2px solid $logocolor;
+      border-bottom: 2px solid $logocolor;
+      content: '';
+    }
+
+    .toggle-open:before{    top: 23px;
+      background: #ffffff;
+      position: absolute;
+      width: 15px;
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      -o-transform: rotate(-45deg);
+      transform: rotate(-45deg);}
+
+    .toggle-open:after{top: 23px;
+      border: 0;
+      height: 2px;
+      width: 15px;
+      background: #ffffff;
+      position: absolute;
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);}
+
+
+      .lea{
+        font-size: 15px;
+      }
+
+
+      .cards{
+        margin-top: 55%;
+        margin-left: 10%;
+        width: 75%;
+        z-index: -1;
+      }
+      .vet{
+        width: 90px;
+        height: 120px;
+        border-radius: 2px;
+      }
+      .horizontal-card-bg-img {
+        width:90px;
+        height: 60px;
+      }
+
+
+      .myButton {
+          padding:7px 15px;
+      }
+      .card-body{
+        font-size: 15px !important;
+      }
+
+ }
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  .dog{
+    width: 100%;
+    position: absolute;
+    margin-top: 100px;//105px;
+    z-index: -2;
+    //border: 1px solid white;
+
+  }
+  .maintext{
+    position: absolute;
+    z-index: -1;
+    margin-left:5%;
+    margin-top: 28%;
+    //margin-top: 50px;
+  }
+
+  .welcome{
+    font-size: 20px;
+  }
+  .wrap{
+    width: 40%;
+    position: absolute;
+    top: 24%;
+    left: 25%;
+    //transform: translate(-50%, -50%);
+    z-index: -1;
+    float: none;
+    bottom: 90%;
+
+  }
+  .searchTerm {
+    width: 100%;
+    border: 3px solid $mainblue;
+    border-right: none;
+    padding: 11px;
+    //height: 20px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    //color: red;
+  }
+  .searchButton {
+    width: 40px;
+    height: 28px;
+    border: 1px solid $mainblue;
+    background: $mainblue;
+    text-align: center;
+    color: $logocolor;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  .search{
+    //height: 20px;
+    font-size: 10px;
+  }
   .logo{
 			display: block;
 			width: 100%;
@@ -281,39 +496,12 @@ nav ul li a:hover{
 	    -o-transform: rotate(45deg);
 	    transform: rotate(45deg);}
 
-      .dog{
-        width: 100%;
-        position: absolute;
-        margin-top: 20%;//105px;
-        z-index: -2;
-        //border: 1px solid white;
-
-      }
-
-      .maintext{
-        position: absolute;
-        z-index: -1;
-        margin-left:10%;
-        margin-top: 22%;
-        //margin-top: 50px;
-      }
-
-      .welcome{
-        font-size: 30px;
-      }
 
       .lea{
         font-size: 15px;
       }
 
-      .wrap{
-        width: 30%;
-        position: absolute;
-        top: 23%;
-        left: 25%;
-        //transform: translate(-50%, -50%);
-        z-index: -1;
-      }
+
       .cards{
         margin-top: 55%;
         margin-left: 10%;
@@ -337,4 +525,5 @@ nav ul li a:hover{
       .card-body{
         font-size: 15px !important;
       }
-	}
+
+ }
