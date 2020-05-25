@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <title>Login</title>
+</head>
+<body>
+ <div class="signForm">
+        <div class="container" id="loginForm">
+            <div class="card mt-5 mb-5 p-2">
+                <h3>Login</h3>
+                <form onsubmit="return false;">
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input class="form-control" id="login_username_input" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input class="form-control" id="login_email_input" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input class="form-control" id="login_password_input" type="password">
+                    </div>
+                    <div class="alert alert-dark">
+                        <p><b>You can test it!</b></p>
+                        <p>username: <kbd>test_lab2</kbd></p>
+                        <p>email: <kbd>testemail@gmail.com</kbd></p>
+                        <p>password: <kbd>test_password2</kbd></p>
+                    </div>
+                    <button class="btn btn-success" onclick="signin()">Login</button>
+                </form>
+            </div>
+        </div>
+ </div>
+             <script src="{% static 'signin.js' %}"></script>
+
+</body>
+</html>
